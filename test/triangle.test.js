@@ -28,67 +28,67 @@ describe('Triangle', () => {
   describe('perimeter()', () => {
     it('devrait calculer le périmètre correctement', () => {
       const triangle = new Triangle(3, 4, 5);
-      expect(triangle.perimeter()).to.equal(12);
+      expect(triangle.getPerimeter()).to.equal(12);
     });
 
     it('devrait calculer le périmètre pour un triangle équilatéral', () => {
       const triangle = new Triangle(5, 5, 5);
-      expect(triangle.perimeter()).to.equal(15);
+      expect(triangle.getPerimeter()).to.equal(15);
     });
 
     it('devrait calculer le périmètre pour un triangle isocèle', () => {
       const triangle = new Triangle(5, 5, 6);
-      expect(triangle.perimeter()).to.equal(16);
+      expect(triangle.getPerimeter()).to.equal(16);
     });
   });
 
   describe('area()', () => {
     it('devrait calculer l\'aire d\'un triangle rectangle (3, 4, 5)', () => {
       const triangle = new Triangle(3, 4, 5);
-      expect(triangle.area()).to.be.closeTo(6, 0.01);
+      expect(triangle.getArea()).to.be.closeTo(6, 0.01);
     });
 
     it('devrait calculer l\'aire d\'un triangle équilatéral', () => {
       const triangle = new Triangle(6, 6, 6);
       const expectedArea = (Math.sqrt(3) / 4) * 36;
-      expect(triangle.area()).to.be.closeTo(expectedArea, 0.01);
+      expect(triangle.getArea()).to.be.closeTo(expectedArea, 0.01);
     });
 
     it('devrait calculer l\'aire d\'un triangle isocèle', () => {
       const triangle = new Triangle(5, 5, 6);
-      expect(triangle.area()).to.be.closeTo(12, 0.01);
+      expect(triangle.getArea()).to.be.closeTo(12, 0.01);
     });
 
     it('devrait calculer l\'aire d\'un triangle scalène', () => {
       const triangle = new Triangle(7, 8, 9);
-      expect(triangle.area()).to.be.closeTo(26.83, 0.01);
+      expect(triangle.getArea()).to.be.closeTo(26.83, 0.01);
     });
   });
 
   describe('type()', () => {
     it('devrait identifier un triangle équilatéral', () => {
       const triangle = new Triangle(5, 5, 5);
-      expect(triangle.type()).to.equal('équilatéral');
+      expect(triangle.getType()).to.equal('équilatéral');
     });
 
     it('devrait identifier un triangle isocèle (a = b)', () => {
       const triangle = new Triangle(5, 5, 7);
-      expect(triangle.type()).to.equal('isocèle');
+      expect(triangle.getType()).to.equal('isocèle');
     });
 
     it('devrait identifier un triangle isocèle (b = c)', () => {
       const triangle = new Triangle(7, 5, 5);
-      expect(triangle.type()).to.equal('isocèle');
+      expect(triangle.getType()).to.equal('isocèle');
     });
 
     it('devrait identifier un triangle isocèle (a = c)', () => {
       const triangle = new Triangle(5, 7, 5);
-      expect(triangle.type()).to.equal('isocèle');
+      expect(triangle.getType()).to.equal('isocèle');
     });
 
     it('devrait identifier un triangle scalène', () => {
       const triangle = new Triangle(3, 4, 5);
-      expect(triangle.type()).to.equal('scalène');
+      expect(triangle.getType()).to.equal('scalène');
     });
   });
 });
